@@ -1,0 +1,16 @@
+/* Style sheet for notes application */
+
+.form-control
+{
+    margin-top: 25px;
+}
+
+.viewcontainer
+{
+    margin-top: 25px;
+}
+
+body
+{
+  padding-top: 50px;
+}

@@ -1,0 +1,27 @@
+<div class="panel-group viewcontainer" id="accordion">
+  <div class="panel panel-default" ng-repeat="note in notes | orderBy:'updated':true">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse{{note.id}}">
+          <span class="pull-right text-muted">
+            <small>{{note.updated | date:'EEEE MMMM dd yyyy @ h:mma'}}</small>
+          </span>
+          <p class="text-info">{{note.title}}</p>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse{{note.id}}" class="panel-collapse collapse">
+      <div class="panel-body">
+        {{note.body}}
+      </div>
+      <div class="panel-footer">
+        <a href="#/notes/{{note.id}}" class="btn btn-primary btm-sm">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a class="btn btn-default btm-sm" ng-click="delete(note.id)">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

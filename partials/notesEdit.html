@@ -1,0 +1,15 @@
+<form role="form">
+  <div class="form-group">
+    <span class="pull-right text-muted">
+      <small>{{note.updated | date:'MM/dd/yyyy @ h:mma'}}</small>
+    </span>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Title..." ng-model="note.title"></input>
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" rows="10" placeholder="My note..." ng-model="note.body" ></textarea>
+  </div>
+  <button type="button" class="btn btn-primary btm-sm" ng-click="save()">Save</button>
+  <button type="button" class="btn btn-default btm-sm" ng-click="cancel()">Close</button>
+</form>
