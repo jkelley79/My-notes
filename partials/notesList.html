@@ -1,5 +1,13 @@
+<div class="container viewcontainer" ng-show="notes.length">
+    <input type="text" ng-model="searchString" class="col-md-3 col-md-offset-9" placeholder="Search...">
+  </div>
 <div class="panel-group viewcontainer" id="accordion">
-  <div class="panel panel-default" ng-repeat="note in notes | orderBy:'updated':true">
+  <div class="jumbotron" ng-hide="notes.length">
+    <div class="container">
+      <h1>Welcome <a class="btn btn-primary btn-lg" href="#/notes/editor">Get started</a></h1>
+    </div>
+  </div>
+  <div class="panel panel-default" ng-repeat="note in notes | filter: searchString | orderBy:'updated':true">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse{{note.id}}">

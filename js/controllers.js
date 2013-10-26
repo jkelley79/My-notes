@@ -59,6 +59,10 @@ evernoteControllers.controller('NotesEditCtrl', ['$scope', '$routeParams', funct
             // Dynamicall assign the id to new notes
             $scope.note.id = new Date().getTime();
         }
+        if(!$scope.note.hasOwnProperty('title'))
+        {
+            $scope.note.title = 'No title';
+        }
         // Set the updated timestamp
         $scope.note.updated = new Date();
 
